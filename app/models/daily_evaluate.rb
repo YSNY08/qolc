@@ -1,0 +1,2 @@
+class DailyEvaluate < ApplicationRecord
+end

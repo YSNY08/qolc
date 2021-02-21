@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_time: 2021-02-20 14:49:47
+  end_time: 2021-02-20 14:49:47
+  user: one
+  daily_evaluate: one
+  content: MyString
+  value: 1.5
+
+two:
+  start_time: 2021-02-20 14:49:47
+  end_time: 2021-02-20 14:49:47
+  user: two
+  daily_evaluate: two
+  content: MyString
+  value: 1.5
