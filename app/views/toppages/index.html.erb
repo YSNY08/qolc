@@ -1,10 +1,59 @@
 <% if logged_in? %>
-  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+  <div class="main">
+    <div class="slider">
+      <ul class="slider__container">
+        <p id="photo1" class="slider__item slider__item1">質の高い生活は、<br>食事・運動・睡眠の３つを大切にすることです。</p>
+        <p id="photo2" class="slider__item slider__item1">適度な運動は血行を良くします！<br>さぁ！汗をかこう！</p>
+        <p id="photo3" class="slider__item slider__item1">朝食を甘く見てはいけません。<br>一日の生活を支える架け橋です！</p>
+        <p id="photo4" class="slider__item slider__item1">睡眠不足はパフォーマンスが大きく低下します。<br>十分な睡眠時間の確保を意識しよう</p>
+      </ul>
+    </div>
+
+    <% content_for :head do %>
+      <%= stylesheet_link_tag "style.css" %>
+    <% end %>
+
+    <% content_for :head do %>
+      <%= javascript_include_tag "slide.js" %>
+    <% end %>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 mt-3">
+        <div class="box">
+          <%= link_to schedule_path, target: "_blank" do %>
+            <p class="text-center">スケジュールを組む</p>
+            <%= image_tag "No_image.png", :size =>'345x400' %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-lg-4 mt-3">
+        <div class="box">
+          <%= link_to evaluate_path, target: "_blank" do %>
+            <p class="text-center">評価を見る</p>
+            <%= image_tag "No_image.png", :size =>'345x400' %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-lg-4 mt-3">
+        <div class="box">
+          <%= link_to timeline_path, target: "_blank" do %>
+            <p class="text-center">タイムライン</p>
+            <%= image_tag "No_image.png", :size =>'345x400' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <% content_for :head do %>
+      <%= stylesheet_link_tag "solid.css" %>
+    <% end %>
+  </div>
 <% else %>
   <div class="center jumbotron">
     <div class="text-center">
       <h1>Welcome to the Microposts</h1>
-      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-success' %>
     </div>
   </div>
 <% end %>

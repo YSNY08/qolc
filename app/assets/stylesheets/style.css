@@ -1,0 +1,59 @@
+.main{
+  width: 800px;
+  margin: 30px auto;
+}
+
+.slider{
+  /* スライドを表示させる画面の横幅(≒スライド１枚あたりの横幅) */
+  width: 800px;
+  /* スライドを表示させる画面の縦幅(≒スライド１枚あたりの縦幅) */
+  height: 500px;
+  /* はみ出した要素は隠れるようにする */
+  overflow: hidden;
+}
+.slider__container{
+  /* スライドを表示する画面とスライド１枚をぴったり合わせるため設定 */
+  padding: 0;
+  margin: 0;
+  
+  /* 子要素でfloatを利用しているため設定 */
+  overflow: hidden;
+
+  list-style: none;
+
+  /* 後ほどJSでleftプロパティを設定するため必要 */
+  position: relative;
+
+}
+.slider__container p{
+  font-size: 20px;
+  color: whitesmoke;
+  /* 背景のみ透過したい */
+  background-color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 50px 0;
+}
+#photo1{
+  background-image: image-url("生活.jpg");
+  background-size: cover;
+}
+#photo2{
+  background-image: image-url("運動.webp");
+  background-size: cover;
+}
+#photo3{
+  background-image: image-url("食事.jpg");
+  background-size: cover;
+}
+#photo4{
+  background-image: image-url("睡眠.jpg");
+  background-size: cover;
+}
+.slider__item{
+  /* スライド１枚あたりの横幅 */
+  width: 800px;
+  /* スライド１枚あたりの縦幅 */
+  height: 500px;
+  /* スライドを横一列に並べる */
+  float: left;
+}
