@@ -15,7 +15,7 @@
   /* スライドを表示する画面とスライド１枚をぴったり合わせるため設定 */
   padding: 0;
   margin: 0;
-  
+  border: 1px solid whitesmoke;
   /* 子要素でfloatを利用しているため設定 */
   overflow: hidden;
 
@@ -27,26 +27,31 @@
 }
 .slider__container p{
   font-size: 20px;
-  color: whitesmoke;
+  font-family: "TsukuARdGothic-Regular";
+  color: black;
   /* 背景のみ透過したい */
-  background-color: rgba(255, 255, 255, 0.7);
   text-align: center;
   padding: 50px 0;
+  width: 100%;
+  height: 100%;
+}
+.bg-wrapper {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 #photo1{
-  background-image: image-url("生活.jpg");
+  background-image: image-url("life.jpg");
   background-size: cover;
 }
 #photo2{
-  background-image: image-url("運動.webp");
+  background-image: image-url("exercise.webp");
   background-size: cover;
 }
 #photo3{
-  background-image: image-url("食事.jpg");
+  background-image: image-url("sleep.jpg");
   background-size: cover;
 }
 #photo4{
-  background-image: image-url("睡眠.jpg");
+  background-image: image-url("meal.jpg");
   background-size: cover;
 }
 .slider__item{

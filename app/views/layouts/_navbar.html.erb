@@ -8,9 +8,14 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <% if logged_in? %>
-          <li class="nav-item"><%= link_to current_user.name, user_path(current_user), class: 'nav-link' %></li>
+          <li class="nav-item">
+            <%= link_to user_path(current_user), class: 'nav-link' do %>
+              <i class="fas fa-user"></i>
+              <%= current_user.name %>
+            <% end %>
+          </li>
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">メニュー</a>
+            <a href="#" class="nav-link" data-toggle="dropdown"><i class="fas fa-cog"></i></a>
             <ul class="dropdown-menu dropdown-menu-right">
               <li class="dropdown-item"><%= link_to 'タイムライン', timeline_path %></li>
               <li class="dropdown-item"><%= link_to 'スケジュールを見る', schedule_path %></li>

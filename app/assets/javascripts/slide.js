@@ -9,7 +9,7 @@ var slideItemNum = $('.slider__item').length;
 var slideItemWidth = $('.slider__item').innerWidth();
 
 //スライド１つあたりの横幅とスライドの個数から
-var slideContainerWidth = slideItemWidth * slideItemNum;
+var slideContainerWidth = slideItemWidth * slideItemNum + 100;
 
 //スライドさせる速さ(animateメソッド用)
 var DURATION = 1000;

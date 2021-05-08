@@ -1,0 +1,29 @@
+<h3 class="text-center">スケジュール編集</h3>
+<%= form_with model: @schedule, url: "/schedule_update/#{@schedule.id}", method: :put do |f| %>
+  <div class="container">
+    <div class="row">
+      <label class="col-3">タイトル</label>
+      <div class="col-9">
+        <%= f.text_field :title, class: "form-control"%>
+      </div>
+      <label class="col-3">開始日時</label>
+      <div class="col-9">
+        <%= f.datetime_field  :start, class:"field" %>
+      </div>
+      <label class="col-3">終了日時</label>
+      <div class="col-9">
+        <%= f.datetime_field :end, class:"field" %>
+      </div>
+      <label class="col-3">詳細</label>
+      <div class="col-9">
+        <%= f.text_field :body, class: "form-control" %>
+      </div>
+      <%= f.hidden_field :user_id, :value => session[:user_id] %>
+    </div>
+    <div class="modal-footer">
+      <%= f.submit "編集する", class: "btn btn-success" %>
+      <%# show.html.erbに戻る際に必要なパラメータ(params[:date])が送れない %>
+      <button type="button" class="btn btn-default"><%= link_to '戻る', schedule_detail_path, :style => "color:black" %></button>
+    </div>
+  </div>
+<% end %>
