@@ -2,6 +2,7 @@ class SchedulesController < ApplicationController
   before_action :require_user_logged_in
 
   def index
+    @schedule = Schedule.new
   end
 
   def show
@@ -32,6 +33,7 @@ class SchedulesController < ApplicationController
 
   def edit
     @schedule = Schedule.find(params[:id])
+    @date = params[:date]
   end
 
   def create
@@ -41,6 +43,7 @@ class SchedulesController < ApplicationController
   end
 
   def update
+    binding.pry
     @schedule = Schedule.find(params[:id])
     @schedule.update(schedule_params)
     redirect_to schedule_path

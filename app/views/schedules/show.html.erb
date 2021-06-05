@@ -12,8 +12,8 @@
         <th class="col-1 text-center"><%= schedule[:start] %></th>
         <td class="col-11 text-center">
         <% schedule[:schedules].each do |s|%>
-          <%= link_to s.title, '#modal-schedule-show', "data-toggle" => "modal", :style => "color:black" %>
-          <div id="modal-schedule-show" class="modal fade" tabindex="-1">
+          <%= link_to s.title, "#modal-schedule-show-#{s.id}", "data-toggle" => "modal", :style => "color:black" %>
+          <div id="<%= "modal-schedule-show-#{s.id}" %>" class="modal fade" tabindex="-1">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
@@ -22,7 +22,7 @@
                 <div class="modal-body">
                   <div class="container">
                     <div class="row">
-                      <%# id=1のスケジュールが表示されてしまう %>
+                      <%# id=1のスケジュールが表示されてしまう OK %>
                       <div class="col-3">タイトル</div>
                       <div class="col-9"><%= s.title %></div>
                       <div class="col-3">開始日時</div>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="modal-footer">
                 <%# ボタンの反応範囲を広げたい %>
-                  <button type="button" class="btn btn-success"><%= link_to "編集する", "/schedule_edit/#{s.id}", :style => "color:white"%></button>
+                  <button type="button" class="btn btn-success"><%= link_to "編集する", "/schedule_edit/#{s.id}?date=#{@date}", :style => "color:white"%></button>
                   <button type="button" class="btn btn-danger"><%= link_to "削除する", "/schedule_destroy/#{s.id}", :style => "color:white", method: :delete, data: { confirm: "本当に削除しますか？" } %></button>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
                 </div>

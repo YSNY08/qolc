@@ -23,7 +23,7 @@
     <div class="modal-footer">
       <%= f.submit "編集する", class: "btn btn-success" %>
       <%# show.html.erbに戻る際に必要なパラメータ(params[:date])が送れない %>
-      <button type="button" class="btn btn-default"><%= link_to '戻る', schedule_detail_path, :style => "color:black" %></button>
+      <button type="button" class="btn btn-default"><%= link_to '戻る', schedule_detail_path(date: @date), :style => "color:black" %></button>
     </div>
   </div>
 <% end %>
