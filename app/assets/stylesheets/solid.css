@@ -1,0 +1,47 @@
+.box {
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+}
+
+.sample {
+  width: 348px;
+  height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.sample .caption {
+  font-size: 20px;
+  font-family: "TsukuARdGothic-Regular";
+  text-align: center;
+  padding-top: 180px;
+  color: #fff;
+}
+
+.sample .mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.sample:hover .mask {
+  opacity: 1;
+}
+
+.container p {
+  font-size: 20px;
+  font-family: "TsukuARdGothic-Regular";
+  color: gray;
+}
+
+.container h5 {
+  font-family: "TsukuARdGothic-Regular";
+}

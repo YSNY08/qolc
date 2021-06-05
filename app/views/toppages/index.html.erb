@@ -1,10 +1,74 @@
 <% if logged_in? %>
-  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+  <div class="main">
+    <div class="slider">
+      <ul class="slider__container">
+        <div id="photo1" class="slider__item slider__item1"><p class="bg-wrapper">質の高い生活は、<br>食事・運動・睡眠の３つを大切にすることです。</p></div>
+        <div id="photo2" class="slider__item slider__item1"><p class="bg-wrapper">適度な運動は血行を良くします！<br>さぁ！汗をかこう！</p></div>
+        <div id="photo3" class="slider__item slider__item1"><p class="bg-wrapper">朝食を甘く見てはいけません。<br>一日の生活を支える架け橋です！</p></div>
+        <div id="photo4" class="slider__item slider__item1"><p class="bg-wrapper">睡眠不足はパフォーマンスが大きく低下します。<br>十分な睡眠時間の確保を意識しよう</p></div>
+      </ul>
+    </div>
+    <% content_for :head do %>
+      <%= stylesheet_link_tag "style.css" %>
+    <% end %>
+
+    <%= javascript_include_tag "slide.js" %>
+</div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 mt-3">
+        <h5 class="text-center">スケジュール</h5>
+        <div class="box">
+          <%= link_to schedule_path do %>
+            <div class="sample">
+              <%= image_tag "schedule.jpeg", :size =>'348x400' %>
+              <div class="mask">
+                <div class="caption">スケジュールを決める</div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <p class="text-center">まずはここで1日の予定や今後の予定を書き出そう！</p>
+      </div>
+      <div class="col-lg-4 mt-3">
+        <h5 class="text-center">評価</h5>
+        <div class="box">
+          <%= link_to evaluate_path do %>
+            <div class="sample">
+              <%= image_tag "evaluate.jpeg", :size =>'348x400' %>
+              <div class="mask">
+                <div class="caption">自分の評価を見る</div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <p class="text-center">昨日の実績や過去の評価が見れます。</p>
+      </div>
+      <div class="col-lg-4 mt-3">
+        <h5 class="text-center">タイムライン</h5>
+        <div class="box">
+          <%= link_to timeline_path do %>
+            <div class="sample">
+              <%= image_tag "timeline.jpeg", :size =>'348x400' %>
+              <div class="mask">
+                <div class="caption">みんなの私生活を見る</div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <p class="text-center">フォローしたユーザーのつぶやきが見れます。</p>
+      </div>
+    </div>
+    <% content_for :head do %>
+      <%= stylesheet_link_tag "solid.css" %>
+    <% end %>
+  </div>
 <% else %>
   <div class="center jumbotron">
     <div class="text-center">
       <h1>Welcome to the Microposts</h1>
-      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-success' %>
     </div>
   </div>
 <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_20_054947) do
+ActiveRecord::Schema.define(version: 2021_04_08_052923) do
 
   create_table "daily_actions", force: :cascade do |t|
     t.datetime "start_time"
@@ -32,6 +32,18 @@ ActiveRecord::Schema.define(version: 2021_02_20_054947) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "schedules", force: :cascade do |t|
+    t.string "title" # スケジュールタイトル
+    t.text "body" # スケジュール詳細
+    t.datetime "start" # 開始時刻
+    t.datetime "end" # 終了時刻
+    t.datetime "allDay" # 終日 t or f ?
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_schedules_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -42,4 +54,5 @@ ActiveRecord::Schema.define(version: 2021_02_20_054947) do
 
   add_foreign_key "daily_actions", "daily_evaluates"
   add_foreign_key "daily_actions", "users"
+  add_foreign_key "schedules", "users"
 end

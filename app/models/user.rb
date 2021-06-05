@@ -7,4 +7,9 @@ class User < ApplicationRecord
   has_secure_password
 
   has_many :daily_actions
+
+  has_many :schedules
 end
+
+# example_1@gmail.com
+# password

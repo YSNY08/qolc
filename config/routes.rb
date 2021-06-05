@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'toppages#index'
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
+
+  get 'schedule', to: 'schedules#index'
+  get 'schedule_detail', to: 'schedules#show'
+  post 'schedule_create', to: 'schedules#create'
+  get 'schedule_edit/:id', to: 'schedules#edit'
+  put 'schedule_update/:id', to: 'schedules#update'
+  delete 'schedule_destroy/:id', to: 'schedules#destroy'
+  get 'timeline', to: 'timelines#index'
+  get 'evaluate', to: 'evaluates#index'
 
   get 'signup', to: 'users#new'
   resources :users, only: [:index, :show, :create]
