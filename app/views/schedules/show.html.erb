@@ -13,7 +13,6 @@
         <td class="col-11 text-center">
         <% schedule[:schedules].each do |s|%>
           <%= link_to s.title, '#modal-schedule-show', "data-toggle" => "modal", :style => "color:black" %>
-          <%# スケジュールの詳細をモーダルで表示 %>
           <div id="modal-schedule-show" class="modal fade" tabindex="-1">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
