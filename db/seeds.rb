@@ -14,6 +14,6 @@ today_six_am = Time.zone.today.strftime('%F 06:00:00').to_datetime
   Schedule.create(user_id: 1,
                  title: 'test',
                  body: 'test',
-                 start: today_six_am - 7.days + (t * 30).minute,  # 今日から1週間前の朝6時から30分刻み
-                 end: today_six_am - 7.days + (t * 30).minute + 1.hour) # startから1時間後
+                 start: today_six_am - 1.days + (t * 30).minute,  # 今日から1週間前の朝6時から30分刻み
+                 end: today_six_am - 1.days + (t * 30).minute + 1.hour) # startから1時間後
 end

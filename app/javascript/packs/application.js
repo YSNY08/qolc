@@ -16,24 +16,7 @@ import "channels"
 
 
 document.addEventListener("turbolinks:load", function() {
-  var calendarEl = document.getElementById('calendar')
-  var calendar = new FullCalendar.Calendar(calendarEl, {
-    headerToolbar: {
-      left: 'prev today',
-      center: 'title',
-      right: 'next'
-    },
-    initialDate: '2020-12-01',
-    navLinks: false,
-    businessHours: true,
-    editable: true,
-    locale: 'ja',
-    dateClick: function(info) {
-      info.jsEvent.preventDefault(); // don't let the browser navigate
-      window.location.href = '/schedule_detail?date=' + info.dateStr;
-    }
-  });
-  calendar.render()
+
 })
 
 Rails.start()

@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   delete 'schedule_destroy/:id', to: 'schedules#destroy'
   get 'timeline', to: 'timelines#index'
   get 'evaluate', to: 'evaluates#index'
+  get 'check_daily_schedule', to: 'schedule_results#index'
+  post 'create_schedule_result', to: 'schedule_results#create'
 
   get 'signup', to: 'users#new'
   resources :users, only: [:index, :show, :create]

@@ -62,3 +62,5 @@ gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 
 gem 'pry-rails'
+gem 'activerecord-import'
+gem 'whenever'

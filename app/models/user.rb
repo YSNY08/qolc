@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :daily_actions
 
   has_many :schedules
+  has_many :achievement_results
 end
 
 # example_1@gmail.com

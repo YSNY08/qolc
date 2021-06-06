@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_08_052923) do
+ActiveRecord::Schema.define(version: 2021_06_06_122550) do
+
+  create_table "achievement_results", force: :cascade do |t|
+    t.string "duration"
+    t.integer "user_id", null: false
+    t.integer "achievement_rate"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "daily_actions", force: :cascade do |t|
     t.datetime "start_time"
@@ -32,12 +40,20 @@ ActiveRecord::Schema.define(version: 2021_04_08_052923) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "schedule_results", force: :cascade do |t|
+    t.boolean "is_success"
+    t.integer "schedule_id", null: false
+    t.date "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "schedules", force: :cascade do |t|
-    t.string "title" # スケジュールタイトル
-    t.text "body" # スケジュール詳細
-    t.datetime "start" # 開始時刻
-    t.datetime "end" # 終了時刻
-    t.datetime "allDay" # 終日 t or f ?
+    t.string "title"
+    t.text "body"
+    t.datetime "start"
+    t.datetime "end"
+    t.datetime "allDay"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false

@@ -1,12 +1,13 @@
 class SchedulesController < ApplicationController
   before_action :require_user_logged_in
+  before_action :prepare_current_user, only: %i[index show]
 
   def index
+    @user_schedules = @user.schedules.map { |s| { title: s.title, start: s.start.strftime('%F') } }
     @schedule = Schedule.new
   end
 
   def show
-    @user = User.find(session[:user_id])
     @date = params[:date].to_date
     @prev_date = @date - 1.days
     @next_date = @date + 1.days
@@ -43,7 +44,6 @@ class SchedulesController < ApplicationController
   end
 
   def update
-    binding.pry
     @schedule = Schedule.find(params[:id])
     @schedule.update(schedule_params)
     redirect_to schedule_path

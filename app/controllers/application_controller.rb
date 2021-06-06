@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
+
+  def prepare_current_user
+    @user = User.find(session[:user_id])
+  end
 end
